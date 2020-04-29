@@ -1,5 +1,6 @@
-var inquirer = require("inquirer");
-var fs = require("fs");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const api = require("./utils/api");
 
 const questions = [
 {
@@ -57,18 +58,25 @@ const questions = [
 function init() {
   inquirer.prompt(questions).then((inquirerResponses) => {
     console.log(inquirerResponses);
+    api
+      .getUser(inquirerResponses.user)
+      .then(({ data }) => {
+        console.log(data);
+        //writeToFile("README.md", generateMarkdown({ ...inquirerResponses, ...data}));
+      })
   })  
 }
 
-// function init() {
-//    inquirer.prompt(questions).then((inquirerResponses) => {
-//      console.log(inquirerResponses);
-//      api
-//        .getUser(inquirerResponses.username)
-//        .then(({ data }) => {
-//            writeToFile("README.md", generateMarkdown({ ...inquirerResponses, ...data}));
-//        })
-//   })
-// }
+//tag badge
+//https://img.shields.io/github/v/tag/jdeleonardis/homework_9_readme_generator?style=plastic
+
+//release badge
+//https://img.shields.io/github/v/release/jdeleonardis/homework_9_readme_generator?color=blue&include_prereleases&style=plastic
+
+//closed issues badge
+//https://img.shields.io/github/issues-closed-raw/jdeleonardis/homework_9_readme_generator?color=success&style=plastic
+
+//open issues badge
+//https://img.shields.io/github/issues-raw/jdeleonardis/homework_9_readme_generator?color=critical&style=plastic
 
 init();
