@@ -1,22 +1,13 @@
-const axios = require("axios");
-require("dotenv").config();
+const { Octokit } = require('@octokit/rest')
 
-const api = {
-  getUser(user) {
-    return axios
-      .get(
-        //`https://api.github.com/users/${username}?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}`
-        `https://api.github.com/users/${user}`
-      )
-      .then(response => {
-        return response;
-      })
-      .catch(err => {
-        console.log("User Not Found")
-        process.exit(1);
-      });
+function runApi(user, callBack){
+    const githubUser = new Octokit({ auth: "0ef0ea0af5fbb6f6ac5c78dadf603df59b1c670f" });
 
-  }
+    githubUser.request('GET /users/:username', {
+      username: user
+    }).then(function(res) {
+      callBack(res.data);
+    });
 };
 
-module.exports = api;
+module.exports = runApi;

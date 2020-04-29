@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const api = require("./utils/api");
+const apiCall = require("./utils/api");
+//const { Octokit } = require('@octokit/rest')
 
 const questions = [
 {
@@ -10,13 +11,14 @@ const questions = [
 },
 {
   type: "input",
-  message: "Enter your Github Email:",
-  name: "email"
+  message: "Enter a project title:",
+  name: "title"
 },
 {
   type: "input",
-  message: "Enter a project title:",
-  name: "title"
+  message: "What is the github repo name?:",
+  name: "repo",
+  default: process.cwd().split('\\').pop()
 },
 {
   type: "input",
@@ -47,26 +49,25 @@ const questions = [
   type: "list",
   message: "License Selection:",
   name: "license",
-  choices: ['MIT', 'Apache', 'GPL']
+  choices: ['MIT', 'Apache', 'GPL'],
+  default: 'MIT'
 }
 ];
 
-// function writeToFile(fileName, data) {
-// return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-// }
+async function init() {
+  try {
+    const answers = await inquirer.prompt(questions)
+    apiCall(answers.user, async function (data) { //data comes back in data var.
+      console.log(data);
+      // const markdown = generateMarkdown(answers, data.email, data.avatar_url);
 
-function init() {
-  inquirer.prompt(questions).then((inquirerResponses) => {
-    console.log(inquirerResponses);
-    api
-      .getUser(inquirerResponses.user)
-      .then(({ data }) => {
-        console.log(data);
-        //writeToFile("README.md", generateMarkdown({ ...inquirerResponses, ...data}));
-      })
-  })  
+      // await writeFileAsync("ReadMe.md", markdown);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+
 }
-
 //tag badge
 //https://img.shields.io/github/v/tag/jdeleonardis/homework_9_readme_generator?style=plastic
 
@@ -80,3 +81,5 @@ function init() {
 //https://img.shields.io/github/issues-raw/jdeleonardis/homework_9_readme_generator?color=critical&style=plastic
 
 init();
+
+
