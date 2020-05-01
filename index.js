@@ -59,14 +59,11 @@ const questions = [
 async function init() {
   try {
     const answers = await inquirer.prompt(questions)
-    apiCall(answers.user, async function (data) { //data comes back in data var.  contains image and email address.
-      //console.log(data);
+    apiCall(answers.user, async function (data) { //data comes back in data var.  contains github image and email address.
       const returnedFile = createReadMe(answers,data);      
-      // const markdown = generateMarkdown(answers, data.email, data.avatar_url);
       await writeFileAsync("README.md", returnedFile);
     });
   }
-
   catch (err) {
     console.log(err);
   }

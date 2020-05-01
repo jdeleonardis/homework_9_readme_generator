@@ -6,7 +6,7 @@
 ![Badge](https://img.shields.io/github/issues-raw/jdeleonardis/homework_9_readme_generator?color=critical&style=plastic)
 
 # Project Title
-jdeleonardis
+Readme Generator
 
 ## Table of Contents:
 - [Repository](#Repository)
@@ -22,19 +22,19 @@ jdeleonardis
 homework_9_readme_generator
 
 ## Description
-test
+This project will be used to generate a readme file based on answers given.  The readme will contain a table of contents, badges, github profile information, as well as the answers provided.
 
 ## Installation
-test
+No installation required.
 
 ## Usage
-test
+This project should be executed using node.js
 
 ## Contributors
-tset
+jdeleonardis
 
 ## Tests
-tes
+none
 
 ## License
 MIT

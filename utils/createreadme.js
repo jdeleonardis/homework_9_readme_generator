@@ -10,7 +10,7 @@ const buildReadMe = (answers,gitHubStuff) => {
 ![Badge](https://img.shields.io/github/issues-raw/${answers.user}/${answers.repo}?color=critical&style=plastic)
 
 # Project Title
-${answers.user}
+${answers.title}
 
 ## Table of Contents:
 - [Repository](#Repository)
