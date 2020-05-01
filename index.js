@@ -1,7 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const apiCall = require("./utils/api");
-//const { Octokit } = require('@octokit/rest')
+const createReadMe = require("./utils/createreadme");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const questions = [
 {
@@ -57,13 +59,15 @@ const questions = [
 async function init() {
   try {
     const answers = await inquirer.prompt(questions)
-    apiCall(answers.user, async function (data) { //data comes back in data var.
-      console.log(data);
+    apiCall(answers.user, async function (data) { //data comes back in data var.  contains image and email address.
+      //console.log(data);
+      const returnedFile = createReadMe(answers,data);      
       // const markdown = generateMarkdown(answers, data.email, data.avatar_url);
-
-      // await writeFileAsync("ReadMe.md", markdown);
+      await writeFileAsync("README.md", returnedFile);
     });
-  } catch (err) {
+  }
+
+  catch (err) {
     console.log(err);
   }
 
