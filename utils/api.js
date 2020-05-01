@@ -6,14 +6,17 @@ require('dotenv').config({ path: '../homework_9_personal_access_token/.env'}) //
 
 
 function runApi(user, callBack){
-  var personalAccessToken = process.env.PATOKEN;
+  const personalAccessToken = process.env.PATOKEN;
   const githubUser = new Octokit({ auth: personalAccessToken });
 
   githubUser.request('GET /users/:username', {
     username: user
   }).then(function(res) {
     callBack(res.data);
+  }).catch(function() {
+    console.log("Username does not exist.  Readme generation terminated.");
   });
+
 };
 
 module.exports = runApi;

@@ -8,30 +8,39 @@
 # Project Title
 jdeleonardis
 
-## GitHub Repository
+## Table of Contents:
+- [Repository](#Repository)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributors](#Contributors)
+- [Tests](#Tests)
+- [License](#License)
+- [Profile](#Profile)
+
+## Repository
 homework_9_readme_generator
 
-## Project Description
-description of something amazing that is something amazing
+## Description
+test
 
-## Project Installation
-very carefully
+## Installation
+test
 
-## Project Usage
-also very carefully
+## Usage
+test
 
-## Project Contributors
-jst me!
+## Contributors
+tset
 
-## Tests For This Project
-nope
+## Tests
+tes
 
 ## License
 MIT
 
-## GitHub Email Address
+## Profile
 jdeleonardis@hotmail.com
 
-## Profile Picture
 ![Avatar](https://avatars1.githubusercontent.com/u/58078950?v=4)
 

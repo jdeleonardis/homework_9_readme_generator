@@ -12,31 +12,40 @@ const buildReadMe = (answers,gitHubStuff) => {
 # Project Title
 ${answers.user}
 
-## GitHub Repository
+## Table of Contents:
+- [Repository](#Repository)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributors](#Contributors)
+- [Tests](#Tests)
+- [License](#License)
+- [Profile](#Profile)
+
+## Repository
 ${answers.repo}
 
-## Project Description
+## Description
 ${answers.description}
 
-## Project Installation
+## Installation
 ${answers.install}
 
-## Project Usage
+## Usage
 ${answers.usage}
 
-## Project Contributors
+## Contributors
 ${answers.contribution}
 
-## Tests For This Project
+## Tests
 ${answers.tests}
 
 ## License
 ${answers.license}
 
-## GitHub Email Address
+## Profile
 ${gitHubStuff.email}
 
-## Profile Picture
 ![Avatar](${gitHubStuff.avatar_url})
 
 `;
@@ -44,18 +53,4 @@ ${gitHubStuff.email}
     return readMeFile;
 
 };
-// user
-// title
-// repo
-// description
-// install
-// usage
-// contribution
-// tests
-// license
-//![Badge](${answers.badges})
-//login
-//avatar_url
-//![Avatar](${avatar})
-
 module.exports = buildReadMe;

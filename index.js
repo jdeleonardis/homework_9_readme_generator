@@ -72,18 +72,6 @@ async function init() {
   }
 
 }
-//tag badge
-//https://img.shields.io/github/v/tag/jdeleonardis/homework_9_readme_generator?style=plastic
-
-//release badge
-//https://img.shields.io/github/v/release/jdeleonardis/homework_9_readme_generator?color=blue&include_prereleases&style=plastic
-
-//closed issues badge
-//https://img.shields.io/github/issues-closed-raw/jdeleonardis/homework_9_readme_generator?color=success&style=plastic
-
-//open issues badge
-//https://img.shields.io/github/issues-raw/jdeleonardis/homework_9_readme_generator?color=critical&style=plastic
-
 init();
 
 
