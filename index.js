@@ -56,7 +56,7 @@ const questions = [
 }
 ];
 
-async function init() {
+async function writeFile() {
   try {
     const answers = await inquirer.prompt(questions)
     apiCall(answers.user, async function (data) { //data comes back in data var.  contains github image and email address.
@@ -69,6 +69,6 @@ async function init() {
   }
 
 }
-init();
+writeFile();
 
 

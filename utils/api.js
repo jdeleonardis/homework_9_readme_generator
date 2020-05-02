@@ -19,4 +19,4 @@ function runApi(user, callBack){
 
 };
 
-module.exports = runApi;
+modules.exports = runApi;
