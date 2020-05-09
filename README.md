@@ -25,7 +25,7 @@ homework_9_readme_generator
 This project will be used to generate a readme file based on answers passed in.  The file will display a table of contents, badges, and github profile information.
 
 ## Installation
-No isntallation necessary
+No installation necessary
 
 ## Usage
 node.js
